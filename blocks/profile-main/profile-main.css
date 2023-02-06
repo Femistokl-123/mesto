@@ -1,0 +1,11 @@
+.profile-main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: normal;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    color: white;
+}

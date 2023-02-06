@@ -1,0 +1,9 @@
+.profile-main__info {
+    display: grid;
+    grid-template-columns: 1fr 24px;
+    column-gap: 18px;
+    row-gap: 16px;
+    max-width: 336px;
+    margin-left: 30px;
+    margin-right: 244px;
+}
