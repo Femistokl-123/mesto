@@ -14,7 +14,7 @@ formElement.addEventListener("submit", handleFormSubmit);
 function OpenForm() {
     popup.classList.toggle('popup_opened');
     nameInput.value = author.textContent;
-    infInput = job.textContent;
+    infInput.value = job.textContent;
 }
 
 function CloseForm() {

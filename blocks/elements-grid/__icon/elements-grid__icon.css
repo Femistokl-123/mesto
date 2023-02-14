@@ -1,8 +1,13 @@
 .elements-grid__icon {
     background-image: url(../../../images/hearth.svg);
     background-color: transparent;
+    background-size: cover;
     border: none;
     width: 22px;
     height: 19px;
     cursor: pointer;
+}
+
+.elements-grid__icon:hover {
+    opacity: 0.5;
 }
