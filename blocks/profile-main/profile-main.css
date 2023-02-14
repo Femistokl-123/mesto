@@ -9,3 +9,12 @@
     width: 100%;
     color: white;
 }
+
+@media screen and (max-width: 320px) {
+    .profile-main {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+    }
+}

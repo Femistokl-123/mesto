@@ -1,7 +1,20 @@
 .profile-main__author {
+    width: 294px;
     font-weight: 500;
     font-size: 42px;
     line-height: 48px;
     padding: 0;
     margin: 0;
+}
+
+@media screen and (max-width: 320px) {
+    .profile-main__author {
+        max-width: 189px;
+        font-size: 27px;
+        line-height: 33px;
+        text-align: right;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 }

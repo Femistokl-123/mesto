@@ -21,7 +21,7 @@
                     <div class="profile-main__avatar"></div>
                     <div class="profile-main__info">
                         <h1 class="profile-main__author">Жак-Ив Кусто</h1>
-                        <button class="profile-main__edit" type="button"></button>
+                        <button class="profile-main__edit-button" type="button"></button>
                         <p class="profile-main__job">Исследователь океана</p>
                     </div>
                     <button class="button profile-main__button" type="button">+</button>
@@ -67,7 +67,7 @@
                 <div class="elements-grid__item">
                     <img class="elements-grid__image" src="./images/Karachayevsk.png" alt="Карачаевск">
                     <div class="elements-grid__bottom">
-                        <h3 class="elements-grid__name">Карачаевск</h3>
+                        <h3 class="elements-grid__name">Карачаево-Черкессия</h3>
                         <button class="elements-grid__icon" type="button"></button>
                     </div>
                 </div>
@@ -76,7 +76,24 @@
         <footer class="footer">
             <p class="footer__copyright">© 2023 Mesto Russia</p>
         </footer>
+
+        <div class="popup popup_opened">
+            <div class="popup__container">
+                <button class="popup__close" type="button"></button>
+                <h3 class="popup__title">Редактировать профиль</h3>
+                <form class="popup__form">
+                    <div class="popup__input-form">
+                        <input type="text" class="popup__input popup__input_type_name">
+                    </div>
+                    <div class="popup__input-form">
+                        <input type="text" class="popup__input popup__input_type_inf">
+                    </div>
+                    <button class="button popup__button" type="submit">Сохранить</button>
+                </form>
+            </div>
+        </div>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
