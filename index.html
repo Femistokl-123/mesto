@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width" , initial-scale="1.0">
+    <meta name="viewport" content="width=device-width" initial-scale="1.0">
     <title>Mesto</title>
     <link rel="stylesheet" href="pages/index.css">
 </head>
@@ -18,13 +18,17 @@
         <main class="content">
             <section class="profile">
                 <div class="profile-main">
-                    <div class="profile-main__avatar"></div>
+                    <div class="profile-main__avatar">
+                        <img src="./images/image.svg" class="profile-main__avatar-size" alt="avatar">
+                    </div>
                     <div class="profile-main__info">
                         <h1 class="profile-main__author">Жак-Ив Кусто</h1>
                         <button class="profile-main__edit-button" type="button"></button>
                         <p class="profile-main__job">Исследователь океана</p>
                     </div>
-                    <button class="button profile-main__button" type="button">+</button>
+                    <button class="button profile-main__button" type="button">
+                        <img src="./images/Vector.svg" class="profile-main__button-plus" alt="plus">
+                    </button>
                 </div>
             </section>
 
@@ -81,19 +85,17 @@
             <div class="popup__container">
                 <button class="popup__close" type="button"></button>
                 <h3 class="popup__title">Редактировать профиль</h3>
-                <form class="popup__form">
-                    <div class="popup__input-form">
-                        <input type="text" class="popup__input popup__input_type_name" id="nameInput" name="nameInput">
-                    </div>
-                    <div class="popup__input-form">
-                        <input type="text" class="popup__input popup__input_type_inf" id="infInput" name="infInput">
-                    </div>
+                <form class="popup__form" name="form">
+                    <input type="text" class="popup__input popup__input-form popup__input_type_name" id="nameInput"
+                        name="name-Input" placeholder="Жак-Ив Кусто">
+                    <input type="text" class="popup__input popup__input-form popup__input_type_inf" id="infInput"
+                        name="inf-Input" placeholder="Исследователь океана">
                     <button class="button popup__button" type="submit">Сохранить</button>
                 </form>
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="./script/script.js"></script>
 </body>
 
 </html>
