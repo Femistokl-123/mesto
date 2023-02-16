@@ -9,8 +9,8 @@ const formElement = document.querySelector('.popup__form');
 
 function openForm() {
     popupContent.classList.toggle('popup_opened');
-    nameInput.value = author.textContent;
-    infInput.value = job.textContent;
+    nameInput.value = authorElement.textContent;
+    infInput.value = jobElement.textContent;
 }
 
 function closeForm() {
