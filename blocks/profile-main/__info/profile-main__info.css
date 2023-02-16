@@ -8,7 +8,7 @@
     margin-right: 244px;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 879px) {
     .profile-main__info {
         max-width: 282px;
         margin: 0 auto 36px auto;

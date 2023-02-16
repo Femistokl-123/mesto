@@ -1,9 +1,0 @@
-.profile-main__avatar {
-    margin: 0;
-}
-
-@media screen and (max-width: 320px) {
-    .profile-main__avatar {
-        margin-bottom: 26px;
-    }
-}

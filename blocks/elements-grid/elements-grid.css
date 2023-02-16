@@ -18,7 +18,15 @@
     margin-bottom: 0;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 879px) {
+    .elements-grid {
+        max-width: 581px;
+        grid-template-columns: repeat(2, 282px);
+        grid-template-rows: repeat(3, 361px);
+    }
+}
+
+@media screen and (max-width: 600px) {
     .elements-grid {
         max-width: 282px;
         margin-bottom: 48px;

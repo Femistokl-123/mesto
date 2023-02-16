@@ -13,7 +13,7 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 879px) {
     .profile-main__button {
         width: 282px;
     }
