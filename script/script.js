@@ -7,6 +7,16 @@ const infInput = document.querySelector('.popup__input_type_inf');
 const closeButton = document.querySelector('.popup__close');
 const formElement = document.querySelector('.popup__form');
 
+function editCardsElements() {
+    const basicCardsTemplate = document.querySelector('#cards-template').сontent;
+    const basicCards = basicCardsTemplate.querySelector('.elements-grid__item').cloneNode(true);
+
+    basicCards.querySelector('.elements-grid__icon').addEventListener('click', function (evt) 
+    {
+        evt.target.classList.toggle('elements-grid__icon_like');
+    });
+}
+
 function openForm() {
     popupContent.classList.toggle('popup_opened');
     nameInput.value = authorElement.textContent;

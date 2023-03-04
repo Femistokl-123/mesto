@@ -25,6 +25,7 @@
 @import url(../blocks/elements-grid/__item/elements-grid__item.css);
 @import url(../blocks/elements-grid/__name/elements-grid__name.css);
 @import url(../blocks/elements-grid/__icon/elements-grid__icon.css);
+@import url(/blocks/elements-grid/__icon/__icon_like/elements-grid__icon_like.css);
 @import url(../blocks/elements-grid/__bottom/elements-grid__bottom.css);
 
 @import url(../blocks/footer/footer.css);

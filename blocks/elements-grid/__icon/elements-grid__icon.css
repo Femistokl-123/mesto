@@ -12,6 +12,14 @@
     transition-delay: 0s;
 }
 
+/*
+.elements-grid__icon_like {
+    background-image: url(../../../images/hearthactive.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+*/
+
 .elements-grid__icon:hover {
     opacity: 0.5;
 }
