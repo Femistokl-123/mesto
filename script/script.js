@@ -83,7 +83,7 @@ function createCard(card) {
         event.target.classList.toggle('elements-grid__icon_like');
     });
 
-    cardAdd.querySelector('.element-grid__delete').addEventListener('click', function(event) {
+    cardAdd.querySelector('.elements-grid__delete').addEventListener('click', function(event) {
         event.target.closest('.elements-grid__item').remove();
     });
 
