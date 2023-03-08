@@ -1,10 +1,12 @@
-.elements-grid__icon {
-    background-image: url(../../../images/hearth.svg);
+.element-grid__delete {
+    background-image: url(../../../images/delete.svg);
     background-color: transparent;
     background-size: cover;
-    border: none;
-    width: 22px;
+    width: 18px;
     height: 19px;
+    position: absolute;
+    margin: 20px 20px 243px 244px;
+    border: none;
     cursor: pointer;
     transition-property: opacity;
     transition-timing-function: linear;
@@ -12,6 +14,6 @@
     transition-delay: 0s;
 }
 
-.elements-grid__icon:hover {
+.element-grid__delete:hover {
     opacity: 0.5;
 }
