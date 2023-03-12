@@ -24,33 +24,6 @@ const popupSubtitle = document.querySelector('.popup__subtitle-photo');
 
 const elementsGrid = document.querySelector('.elements-grid');
 
-const initialCards = [
-    {
-        name: 'Архыз',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-    },
-    {
-        name: 'Челябинская область',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-    },
-    {
-        name: 'Иваново',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-    },
-    {
-        name: 'Камчатка',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-    },
-    {
-        name: 'Холмогорский район',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-    },
-    {
-        name: 'Байкал',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-    }
-];
-
 function createCard(card) {
     const cardAdd = document.querySelector('#cardstemplate').content.cloneNode(true);
     const cardName = cardAdd.querySelector('.elements-grid__name');
@@ -82,13 +55,15 @@ function plusCard(card) {
     elementsGrid.prepend(cardReady);
 }
 
+initialCards.forEach(plusCard);
+
 function deleteCard(event) {
     const button = event.target;
     const card = button.closest('.elements-grid__item');
     card.remove();
 }
 
-function togglePopup(popup){
+function togglePopup(popup) {
     popup.classList.toggle('popup_opened');
 }
 
@@ -146,5 +121,3 @@ popupClosePhoto.addEventListener('click', function () {
 formElementProfile.addEventListener('submit', handleFormSubmitUser);
 
 formElementAdd.addEventListener('submit', handleFormSubmitAdd);
-
-initialCards.forEach(plusCard);
