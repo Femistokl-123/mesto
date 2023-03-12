@@ -16,8 +16,8 @@ const authorElement = document.querySelector('.profile-main__author');
 const jobElement = document.querySelector('.profile-main__job');
 
 const popupcloseButton = document.querySelector('.popup__close');
-const popupCloseAdd = document.querySelector('.popup__close-button_add');
-const popupClosePhoto = document.querySelector('.popup__close-button_photo');
+const popupCloseAdd = document.querySelector('.popup__close_add');
+const popupClosePhoto = document.querySelector('.popup__close_photo');
 
 const popupPicture = document.querySelector('.popup__picture');
 const popupSubtitle = document.querySelector('.popup__subtitle-photo');
