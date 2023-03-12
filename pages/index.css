@@ -28,6 +28,7 @@
 @import url(../blocks/elements-grid/__icon/__icon_like/elements-grid__icon_like.css);
 @import url(../blocks/elements-grid/__bottom/elements-grid__bottom.css);
 @import url(../blocks/elements-grid/__delete/elements-grid__delete.css);
+@import url(../blocks/elements-grid/__zoom/elements-grid__zoom.css);
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);

@@ -31,65 +31,99 @@
             </section>
 
             <section class="elements-grid">
+
                 <div class="elements-grid__item">
                     <button class="elements-grid__delete" type="button"></button>
-                    <img class="elements-grid__image"
-                        src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="Архыз">
+                    <div class="elements-grid__zoom">
+                        <img class="elements-grid__image"
+                            src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg"
+                            alt="Архыз">
+                    </div>
                     <div class="elements-grid__bottom">
                         <h3 class="elements-grid__name">Архыз</h3>
                         <button class="elements-grid__icon" type="button"></button>
                     </div>
                 </div>
+
                 <div class="elements-grid__item">
                     <button class="elements-grid__delete" type="button"></button>
-                    <img class="elements-grid__image"
-                        src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg"
-                        alt="Челябинская область">
+                    <div class="elements-grid__zoom">
+                        <img class="elements-grid__image"
+                            src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg"
+                            alt="Челябинская область">
+                    </div>
                     <div class="elements-grid__bottom">
                         <h3 class="elements-grid__name">Челябинская область</h3>
                         <button class="elements-grid__icon" type="button"></button>
                     </div>
                 </div>
+
                 <div class="elements-grid__item">
                     <button class="elements-grid__delete" type="button"></button>
-                    <img class="elements-grid__image"
-                        src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg"
-                        alt="Иваново">
+                    <div class="elements-grid__zoom">
+                        <img class="elements-grid__image"
+                            src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg"
+                            alt="Иваново">
+                    </div>
                     <div class="elements-grid__bottom">
                         <h3 class="elements-grid__name">Иваново</h3>
                         <button class="elements-grid__icon" type="button"></button>
                     </div>
                 </div>
+
                 <div class="elements-grid__item">
                     <button class="elements-grid__delete" type="button"></button>
-                    <img class="elements-grid__image"
-                        src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg"
-                        alt="Камчатка">
+                    <div class="elements-grid__zoom">
+                        <img class="elements-grid__image"
+                            src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg"
+                            alt="Камчатка">
+                    </div>
                     <div class="elements-grid__bottom">
                         <h3 class="elements-grid__name">Камчатка</h3>
                         <button class="elements-grid__icon" type="button"></button>
                     </div>
                 </div>
+
                 <div class="elements-grid__item">
                     <button class="elements-grid__delete" type="button"></button>
-                    <img class="elements-grid__image"
-                        src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg"
-                        alt="Холмогорский район">
+                    <div class="elements-grid__zoom">
+                        <img class="elements-grid__image"
+                            src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg"
+                            alt="Холмогорский район">
+                    </div>
                     <div class="elements-grid__bottom">
                         <h3 class="elements-grid__name">Холмогорский район</h3>
                         <button class="elements-grid__icon" type="button"></button>
                     </div>
                 </div>
+
                 <div class="elements-grid__item">
                     <button class="elements-grid__delete" type="button"></button>
-                    <img class="elements-grid__image"
-                        src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg"
-                        alt="Байкал">
+                    <div class="elements-grid__zoom">
+                        <img class="elements-grid__image"
+                            src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg"
+                            alt="Байкал">
+                    </div>
                     <div class="elements-grid__bottom">
                         <h3 class="elements-grid__name">Байкал</h3>
                         <button class="elements-grid__icon" type="button"></button>
                     </div>
                 </div>
+
+                <template id="cardstemplate">
+                    <div class="elements-grid__item">
+                        <button class="elements-grid__delete" type="button"></button>
+                        <div class="elements-grid__zoom">
+                            <img class="elements-grid__image"
+                                src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg"
+                                alt="Архыз">
+                        </div>
+                        <div class="elements-grid__bottom">
+                            <h3 class="elements-grid__name">Архыз</h3>
+                            <button class="elements-grid__icon" type="button"></button>
+                        </div>
+                </template>
+
             </section>
         </main>
         <footer class="footer">
@@ -100,7 +134,7 @@
             <div class="popup__container">
                 <button class="popup__close" type="button"></button>
                 <h3 class="popup__title">Редактировать профиль</h3>
-                <form class="popup__form" name="form-Element">
+                <form class="popup__form popup__form-profile" name="form-Element">
                     <input type="text" class="popup__input popup__input-form popup__input_type_name" id="nameInput"
                         name="name-Input" placeholder="Жак-Ив Кусто">
                     <input type="text" class="popup__input popup__input-form popup__input_type_inf" id="infInput"
@@ -112,7 +146,7 @@
 
         <div class="popup popup_add">
             <div class="popup__container">
-                <button class="popup__close" type="button"></button>
+                <button class="popup__close popup__close-button_add" type="button"></button>
                 <h3 class="popup__title">Новое место</h3>
                 <form class="popup__form popup__form-add" name="form-Element" id="profile-popup">
                     <input type="text" class="popup__input popup__input-form popup__input_type_title" id="titleInput"
@@ -126,23 +160,12 @@
 
         <div class="popup popup_photo">
             <div class="popup__container popup__container_photo">
-                <button class="popup__close" type="button"></button>
+                <button class="popup__close popup__close-button_photo" type="button"></button>
                 <img src="#" class="popup__picture" alt="#">
                 <h2 class="popup__subtitle-photo"></h2>
             </div>
         </div>
     </div>
-
-    <template id="cards-template">
-        <div class="elements-grid__item">
-            <button class="elements-grid__delete" type="button"></button>
-            <img class="elements-grid__image" src="#" alt="#">
-            <div class="elements-grid__bottom">
-                <h3 class="elements-grid__name"></h3>
-                <button class="elements-grid__icon" type="button"></button>
-            </div>
-        </div>
-    </template>
 
     <script src="./script/script.js"></script>
 </body>
