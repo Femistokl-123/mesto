@@ -1,4 +1,4 @@
-.popup__container_photo {
+.popup__container-photo {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
