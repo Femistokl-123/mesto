@@ -58,10 +58,12 @@
                 <form class="popup__form popup__form-profile" name="form-Element">
                     <input type="text" class="popup__input popup__input-form popup__input_type_name" id="nameInput"
                         name="name-Input" placeholder="Имя" minlength="2" maxlength="40" required>
-                        <span class="popup__input-error name-Input-error popup__input_type_error">Вы пропустили это поле.</span>
+                    <span class="popup__input-error name-Input-error popup__error_visible">Вы пропустили это
+                        поле.</span>
                     <input type="text" class="popup__input popup__input-form popup__input_type_inf" id="infInput"
                         name="inf-Input" placeholder="Вид деятельности" minlength="2" maxlength="200" required>
-                        <span class="popup__input-error inf-Input-error popup__input_type_error">Вы пропустили это поле.</span>
+                    <span class="popup__input-error inf-Input-error popup__error_visible">Вы пропустили это
+                        поле.</span>
                     <button class="button popup__button" type="submit">Сохранить</button>
                 </form>
             </div>
@@ -74,10 +76,12 @@
                 <form class="popup__form popup__form-add" name="form-Element" id="profile-popup">
                     <input type="text" class="popup__input popup__input-form popup__input_type_title" id="titleInput"
                         name="title-Input" placeholder="Название" minlength="2" maxlength="30" required>
-                        <span class="popup__input-error title-Input-error popup__input_type_error">Вы пропустили это поле.</span>
+                    <span class="popup__input-error title-Input-error popup__error_visible">Вы пропустили это
+                        поле.</span>
                     <input type="text" class="popup__input popup__input-form popup__input_type_link" id="linkInput"
                         name="link-Input" placeholder="Ссылка на картинку" type="url" required>
-                        <span class="popup__input-error link-Input-error popup__input_type_error">Введите адрес сайта.</span>
+                    <span class="popup__input-error link-Input-error popup__error_visible">Введите адрес
+                        сайта.</span>
                     <button class="button popup__button" type="submit">Создать</button>
                 </form>
             </div>
@@ -86,7 +90,8 @@
         <div class="popup popup_photo">
             <div class="popup__container-photo">
                 <button class="popup__close popup__close_photo" type="button"></button>
-                <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" class="popup__picture" alt="Архыз">
+                <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg"
+                    class="popup__picture" alt="Архыз">
                 <h2 class="popup__subtitle-photo">Архыз</h2>
             </div>
         </div>

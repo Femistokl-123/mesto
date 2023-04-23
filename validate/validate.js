@@ -1,11 +1,11 @@
-enableValidation ({
-    formSelector: '.popup__form',
-    inputSelector: '.popup__input',
-    submitButtonSelector: '.popup__button',
-    inactiveButtonClass: 'popup__button_disabled',
-    inputErrorClass: 'popup__input_type_error',
-    errorClass: 'popup__error_visible'
-  });
+enableValidation({
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__button',
+  inactiveButtonClass: 'popup__button_disabled',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__error_visible'
+});
 
 function showInputError(inputElement, formElement, inputErrorClass, errorClass, errorMessage) {
   const formError = formElement.querySelector(`.${inputElement.name}-error`);
@@ -21,7 +21,7 @@ function hideInputError(inputElement, formElement, inputErrorClass, errorClass) 
 }
 
 function isValid(inputElement, formElement, parametres) {
-  if(!inputElement.validity.valid) {
+  if (!inputElement.validity.valid) {
     showInputError(inputElement, formElement, parametres.inputErrorClass, parametres.errorClass, inputElement.validationMessage);
   } else {
     hideInputError(inputElement, formElement, parametres.inputErrorClass, parametres.errorClass);
@@ -36,7 +36,7 @@ function enableValidation(parametres) {
 }
 
 function toggleShowButton(button, inactiveButtonClass) {
-  button.classList.add(inactiveButtonClass);
+  button.classList.remove(inactiveButtonClass);
   button.removeAttribute('disabled');
 }
 
@@ -46,7 +46,7 @@ function toggleHideButton(button, inactiveButtonClass) {
 }
 
 function isVisibleButton(inputList, button, parametres) {
-  if(inputList.some((input) => !input.validity.valid)) {
+  if (inputList.some((input) => !input.validity.valid)) {
     toggleHideButton(button, parametres.inactiveButtonClass);
   } else {
     toggleShowButton(button, parametres.inactiveButtonClass);
