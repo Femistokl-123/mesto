@@ -23,7 +23,57 @@ const buttonClosePopupPhoto = document.querySelector('.popup__close_photo');
 const popupPictureAdd = document.querySelector('.popup__picture');
 const popupSubtitleAdd = document.querySelector('.popup__subtitle-photo');
 
+const popupSaveButton = document.querySelector('.popup__button');
+
 const elementsGrid = document.querySelector('.elements-grid');
+
+function editClosePopup(popup) {
+    document.addEventListener('keydown', closeFieldPopupEsc);
+    popup.classList.add('popup_opened');
+}
+console.log(editClosePopup);
+
+function closePopupEsc(popup) {
+    popup.classList.remove('popup_opened');
+    document.removeEventListener('keydown', closeFieldPopupEsc);
+}
+console.log(closePopupEsc);
+
+/*
+function closeFieldPopupEsc(evt) {
+    if (evt.key === 'Escape') {
+        const openedPopup = document.querySelector('.popup_opened');
+        closePopupEsc(openedPopup);
+    }
+}
+console.log(closeFieldPopupEsc);
+*/
+
+function editPopupImage(popupAddCard) {
+    editClosePopup(popupAddCard);
+    titleInput.value = '';
+    linkInput.value = '';
+    popupSaveButton.classList.add('popup__button_disabled');
+    popupSaveButton.setAttribute('disabled', true);
+}
+console.log(editPopupImage);
+
+function prepareClick(evt, popup) {
+    if (evt.target.classList.contains('popup_opened')) {
+        closePopupEsc(popup);
+    }
+}
+console.log(prepareClick);
+
+/*
+buttonClosePopupEditProfile.addEventListener('click', () => closePopupEsc(popupProfile));
+buttonClosePopupAddCard.addEventListener('click', () => closePopupEsc(popupAddCard));
+buttonClosePopupPhoto.addEventListener('click', () => closePopupEsc(popupPhoto));
+*/
+
+popupAddCard.addEventListener('mousedown', (evt) => prepareClick(evt, popupAddCard));
+popupProfile.addEventListener('mousedown', (evt) => prepareClick(evt, popupProfile));
+popupPhoto.addEventListener('mousedown', (evt) => prepareClick(evt, popupPhoto));
 
 function createCard(card) {
     const cardAdd = cardsTemplate.querySelector('.elements-grid__item').cloneNode(true);
@@ -122,3 +172,4 @@ buttonClosePopupPhoto.addEventListener('click', function () {
 submitElementProfileForm.addEventListener('submit', submitHandleUserForm);
 
 submitElementAddForm.addEventListener('submit', submitHandleAddForm);
+

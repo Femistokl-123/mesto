@@ -57,9 +57,11 @@
                 <h3 class="popup__title">Редактировать профиль</h3>
                 <form class="popup__form popup__form-profile" name="form-Element">
                     <input type="text" class="popup__input popup__input-form popup__input_type_name" id="nameInput"
-                        name="name-Input" placeholder="Имя">
+                        name="name-Input" placeholder="Имя" minlength="2" maxlength="40" required>
+                        <span class="popup__input-error name-Input-error popup__input_type_error">Вы пропустили это поле.</span>
                     <input type="text" class="popup__input popup__input-form popup__input_type_inf" id="infInput"
-                        name="inf-Input" placeholder="Вид деятельности">
+                        name="inf-Input" placeholder="Вид деятельности" minlength="2" maxlength="200" required>
+                        <span class="popup__input-error inf-Input-error popup__input_type_error">Вы пропустили это поле.</span>
                     <button class="button popup__button" type="submit">Сохранить</button>
                 </form>
             </div>
@@ -71,9 +73,11 @@
                 <h3 class="popup__title">Новое место</h3>
                 <form class="popup__form popup__form-add" name="form-Element" id="profile-popup">
                     <input type="text" class="popup__input popup__input-form popup__input_type_title" id="titleInput"
-                        name="title-Input" placeholder="Название">
+                        name="title-Input" placeholder="Название" minlength="2" maxlength="30" required>
+                        <span class="popup__input-error title-Input-error popup__input_type_error">Вы пропустили это поле.</span>
                     <input type="text" class="popup__input popup__input-form popup__input_type_link" id="linkInput"
-                        name="link-Input" placeholder="Ссылка на картинку">
+                        name="link-Input" placeholder="Ссылка на картинку" type="url" required>
+                        <span class="popup__input-error link-Input-error popup__input_type_error">Введите адрес сайта.</span>
                     <button class="button popup__button" type="submit">Создать</button>
                 </form>
             </div>
@@ -90,6 +94,7 @@
 
     <script src="./cards/cards.js"></script>
     <script src="./script/script.js"></script>
+    <script src="./validate/validate.js"></script>
 </body>
 
 </html>
