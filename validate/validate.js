@@ -13,12 +13,14 @@ function showInputError(inputElement, formElement, inputErrorClass, errorClass, 
   formError.textContent = errorMessage;
   formError.classList.add(errorClass);
 }
+console.log(showInputError);
 
 function hideInputError(inputElement, formElement, inputErrorClass, errorClass) {
   const formError = formElement.querySelector(`.${inputElement.name}-error`);
   inputElement.classList.remove(inputErrorClass);
   formError.classList.remove(errorClass);
 }
+console.log(hideInputError);
 
 function isValid(inputElement, formElement, parametres) {
   if (!inputElement.validity.valid) {
@@ -27,6 +29,7 @@ function isValid(inputElement, formElement, parametres) {
     hideInputError(inputElement, formElement, parametres.inputErrorClass, parametres.errorClass);
   }
 }
+console.log(isValid);
 
 function enableValidation(parametres) {
   const formList = Array.from(document.querySelectorAll(parametres.formSelector));
@@ -34,6 +37,7 @@ function enableValidation(parametres) {
     setEventListeners(formElement, parametres.inputSelector, parametres);
   });
 }
+console.log(enableValidation);
 
 function toggleShowButton(button, inactiveButtonClass) {
   button.classList.remove(inactiveButtonClass);
@@ -44,6 +48,7 @@ function toggleHideButton(button, inactiveButtonClass) {
   button.classList.add(inactiveButtonClass);
   button.setAttribute('disabled', true);
 }
+console.log(toggleHideButton);
 
 function isVisibleButton(inputList, button, parametres) {
   if (inputList.some((input) => !input.validity.valid)) {
@@ -52,6 +57,7 @@ function isVisibleButton(inputList, button, parametres) {
     toggleShowButton(button, parametres.inactiveButtonClass);
   }
 }
+console.log(isVisibleButton);
 
 function setEventListeners(formElement, inputElement, parametres) {
   const button = formElement.querySelector(parametres.submitButtonSelector);
@@ -63,3 +69,4 @@ function setEventListeners(formElement, inputElement, parametres) {
     });
   });
 }
+console.log(setEventListeners);
