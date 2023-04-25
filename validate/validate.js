@@ -39,25 +39,26 @@ function enableValidation(parametres) {
 }
 console.log(enableValidation);
 
-function toggleShowButton(button, inactiveButtonClass) {
+function enableButton(button, inactiveButtonClass) {
   button.classList.remove(inactiveButtonClass);
   button.removeAttribute('disabled');
 }
+console.log(enableButton);
 
-function toggleHideButton(button, inactiveButtonClass) {
+function disableButton(button, inactiveButtonClass) {
   button.classList.add(inactiveButtonClass);
   button.setAttribute('disabled', true);
 }
-console.log(toggleHideButton);
+console.log(disableButton);
 
-function isVisibleButton(inputList, button, parametres) {
+function toggleButtonState(inputList, button, parametres) {
   if (inputList.some((input) => !input.validity.valid)) {
-    toggleHideButton(button, parametres.inactiveButtonClass);
+    disableButton(button, parametres.inactiveButtonClass);
   } else {
-    toggleShowButton(button, parametres.inactiveButtonClass);
+    enableButton(button, parametres.inactiveButtonClass);
   }
 }
-console.log(isVisibleButton);
+console.log(toggleButtonState);
 
 function setEventListeners(formElement, inputElement, parametres) {
   const button = formElement.querySelector(parametres.submitButtonSelector);
@@ -65,7 +66,7 @@ function setEventListeners(formElement, inputElement, parametres) {
   inputList.forEach((inputElement) => {
     inputElement.addEventListener('input', () => {
       isValid(inputElement, formElement, parametres);
-      isVisibleButton(inputList, button, parametres);
+      toggleButtonState(inputList, button, parametres);
     });
   });
 }
