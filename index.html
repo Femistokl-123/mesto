@@ -57,20 +57,20 @@
                 <h3 class="popup__title">Редактировать профиль</h3>
                 <form class="popup__form popup__form-profile" name="form-Element">
                     <label class="popup__field">
-                        <input type="text" class="popup__input popup__input_type_name" id="nameInput"
-                            name="name-Input" placeholder="Имя" minlength="2" maxlength="40" required>
-                        <span class="popup__input-error name-Input-error popup__error popup__error_visible">Вы
+                        <input type="text" class="popup__input popup__input_type_name" id="nameInput" name="name-Input"
+                            placeholder="Имя" minlength="2" maxlength="40" required>
+                        <span class="popup__input-error name-Input-error popup__error">Вы
                             пропустили это
                             поле.</span>
                     </label>
                     <label class="popup__field">
-                        <input type="text" class="popup__input popup__input_type_inf" id="infInput"
-                            name="inf-Input" placeholder="Вид деятельности" minlength="2" maxlength="200" required>
-                        <span class="popup__input-error inf-Input-error popup__error popup__error_visible">Вы пропустили
+                        <input type="text" class="popup__input popup__input_type_inf" id="infInput" name="inf-Input"
+                            placeholder="Вид деятельности" minlength="2" maxlength="200" required>
+                        <span class="popup__input-error inf-Input-error popup__error">Вы пропустили
                             это
                             поле.</span>
                     </label>
-                    <button class="button popup__button" type="submit">Сохранить</button>
+                    <button class="button popup__button popup__button_save" type="submit">Сохранить</button>
                 </form>
             </div>
         </div>
@@ -81,23 +81,22 @@
                 <h3 class="popup__title">Новое место</h3>
                 <form class="popup__form popup__form-add" name="form-Element" id="profile-popup">
                     <label class="popup__field">
-                        <input type="text" class="popup__input popup__input_type_title"
-                            id="titleInput" name="title-Input" placeholder="Название" minlength="2" maxlength="30"
-                            required>
-                        <span class="popup__input-error title-Input-error popup__error popup__error_visible">Вы
+                        <input type="text" class="popup__input popup__input_type_title" id="titleInput"
+                            name="title-Input" placeholder="Название" minlength="2" maxlength="30" required>
+                        <span class="popup__input-error title-Input-error popup__error">Вы
                             пропустили
                             это
                             поле.</span>
                     </label>
                     <label class="popup__field">
-                        <input type="url" class="popup__input popup__input_type_link" id="linkInput"
-                            name="link-Input" placeholder="Ссылка на картинку" required>
-                        <span class="popup__input-error link-Input-error popup__error popup__error_visible">Введите
+                        <input type="url" class="popup__input popup__input_type_link" id="linkInput" name="link-Input"
+                            placeholder="Ссылка на картинку" required>
+                        <span class="popup__input-error link-Input-error popup__error">Введите
                             адрес
                             сайта.</span>
                     </label>
-                    <button class="button popup__button popup__button_disabled" type="submit"
-                        disabled="true">Создать</button>
+                    <button class="button popup__button popup__button_add popup__button_disabled" type="submit"
+                        disabled>Создать</button>
                 </form>
             </div>
         </div>

@@ -23,7 +23,8 @@ const buttonClosePopupPhoto = document.querySelector('.popup__close_photo');
 const popupPictureAdd = document.querySelector('.popup__picture');
 const popupSubtitleAdd = document.querySelector('.popup__subtitle-photo');
 
-const cardFormSubmitButton = document.querySelector('.popup__button');
+const popupSaveButton = document.querySelector('.popup__button_save');
+const cardFormSubmitButton = document.querySelector('.popup__button_add');
 
 const elementsGrid = document.querySelector('.elements-grid');
 
