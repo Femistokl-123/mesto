@@ -57,6 +57,8 @@ function openCardPopup(popupAddCard) {
 }
 console.log(openCardPopup);
 
+buttonOpenPopupAddCard.addEventListener('click', () => openCardPopup(popupAddCard));
+
 function handleOverlay(evt, popup) {
     if (evt.target.classList.contains('popup_opened')) {
         closePopup(popup);
