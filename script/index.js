@@ -1,31 +1,31 @@
+/*Редактирование профиля*/
 const popupProfile = document.querySelector('.popup_profile');
-const popupAddCard = document.querySelector('.popup_add');
-const popupPhoto = document.querySelector('.popup_photo');
-
 const submitElementProfileForm = document.querySelector('.popup__form-profile');
-const submitElementAddForm = document.querySelector('.popup__form-add');
-
-const cardsTemplate = document.querySelector('#cardstemplate').content;
+const buttonOpenPopupEditProfile = document.querySelector('.profile-main__edit-button');
+const buttonClosePopupEditProfile = document.querySelector('.popup__close');
+const popupSaveButton = document.querySelector('.popup__button_save');
 const nameInput = document.querySelector('#nameInput');
 const infInput = document.querySelector('#infInput');
+
+/*Редактирование фото*/
+const popupAddCard = document.querySelector('.popup_add');
+const buttonClosePopupAddCard = document.querySelector('.popup__close_add');
+const buttonOpenPopupAddCard = document.querySelector('.profile-main__button');
 const titleInput = document.querySelector('#titleInput');
 const linkInput = document.querySelector('#linkInput');
+const cardFormSubmitButton = document.querySelector('.popup__button_add');
+const submitElementAddForm = document.querySelector('.popup__form-add');
 
-const buttonOpenPopupEditProfile = document.querySelector('.profile-main__edit-button');
-const buttonOpenPopupAddCard = document.querySelector('.profile-main__button');
-const authorElement = document.querySelector('.profile-main__author');
-const jobElement = document.querySelector('.profile-main__job');
-
-const buttonClosePopupEditProfile = document.querySelector('.popup__close');
-const buttonClosePopupAddCard = document.querySelector('.popup__close_add');
-const buttonClosePopupPhoto = document.querySelector('.popup__close_photo');
-
+/*Zoom*/
+const popupPhoto = document.querySelector('.popup_photo');
 const popupPictureAdd = document.querySelector('.popup__picture');
 const popupSubtitleAdd = document.querySelector('.popup__subtitle-photo');
+const buttonClosePopupPhoto = document.querySelector('.popup__close_photo');
 
-const popupSaveButton = document.querySelector('.popup__button_save');
-const cardFormSubmitButton = document.querySelector('.popup__button_add');
-
+/*Оставшиеся*/
+const cardsTemplate = document.querySelector('#cardstemplate').content;
+const authorElement = document.querySelector('.profile-main__author');
+const jobElement = document.querySelector('.profile-main__job');
 const elementsGrid = document.querySelector('.elements-grid');
 
 function openPopup(popup) {
