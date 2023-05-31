@@ -1,4 +1,4 @@
-export function zoomPhoto(card) {
+/*export function zoomPhoto(card) {
     const popupPhoto = document.querySelector('.popup_photo');
     const popupPictureAdd = document.querySelector('.popup__picture');
     const popupSubtitleAdd = document.querySelector('.popup__subtitle-photo');
@@ -29,4 +29,4 @@ export function handleEscape(evt) {
         closePopup(openedPopup);
     }
 }
-console.log(handleEscape);
+console.log(handleEscape);*/

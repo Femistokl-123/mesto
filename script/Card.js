@@ -1,4 +1,4 @@
-import { zoomPhoto } from "./vary.js";
+/*import { zoomPhoto } from "./vary.js";
 
 class Card {
     constructor(card, cardsTemplate) {
@@ -40,4 +40,4 @@ class Card {
     }
 }
 
-export default Card;
+export default Card;*/
