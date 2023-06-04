@@ -1,3 +1,5 @@
+import { Card } from "./Card.js";
+
 /*Редактирование профиля*/
 const popupProfile = document.querySelector('.popup_profile');
 const submitElementProfileForm = document.querySelector('.popup__form-profile');
@@ -23,7 +25,7 @@ const popupSubtitleAdd = document.querySelector('.popup__subtitle-photo');
 const buttonClosePopupPhoto = document.querySelector('.popup__close_photo');
 
 /*Оставшиеся*/
-const cardsTemplate = document.querySelector('#cardstemplate').content;
+/*const cardsTemplate = document.querySelector('#cardstemplate').content;*/
 const authorElement = document.querySelector('.profile-main__author');
 const jobElement = document.querySelector('.profile-main__job');
 const elementsGrid = document.querySelector('.elements-grid');
@@ -70,7 +72,7 @@ popupAddCard.addEventListener('mousedown', (evt) => handleOverlay(evt, popupAddC
 popupProfile.addEventListener('mousedown', (evt) => handleOverlay(evt, popupProfile));
 popupPhoto.addEventListener('mousedown', (evt) => handleOverlay(evt, popupPhoto));
 
-function createCard(card) {
+/*function createCard(card) {
     const cardAdd = cardsTemplate.querySelector('.elements-grid__item').cloneNode(true);
     const cardName = cardAdd.querySelector('.elements-grid__name');
     cardName.textContent = card.name;
@@ -94,7 +96,7 @@ function createCard(card) {
         openPopup(popupPhoto);
     }
     return cardAdd;
-}
+}*/
 
 function addCard(card) {
     const cardAddForm = createCard(card);
@@ -103,11 +105,11 @@ function addCard(card) {
 
 initialCards.forEach(addCard);
 
-function deleteCard(event) {
+/*function deleteCard(event) {
     const buttonCard = event.target;
     const card = buttonCard.closest('.elements-grid__item');
     card.remove();
-}
+}*/
 
 function fillProfileInputs() {
     nameInput.value = authorElement.textContent;
@@ -134,10 +136,10 @@ function submitAddForm(event) {
     submitElementAddForm.reset();
 }
 
-function toggleLike(event) {
+/*function toggleLike(event) {
     const cardLike = event.target;
     cardLike.classList.toggle('elements-grid__icon_like');
-}
+}*/
 
 buttonOpenPopupEditProfile.addEventListener('click', function () {
     openPopup(popupProfile);
@@ -163,3 +165,5 @@ buttonClosePopupPhoto.addEventListener('click', function () {
 submitElementProfileForm.addEventListener('submit', submitUserForm);
 
 submitElementAddForm.addEventListener('submit', submitAddForm);
+
+export {openPopup, popupPhoto, popupPictureAdd, popupSubtitleAdd};

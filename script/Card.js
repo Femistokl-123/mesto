@@ -1,43 +1,37 @@
-/*import { zoomPhoto } from "./vary.js";
+import {openPopup, popupPhoto, popupPictureAdd, popupSubtitleAdd} from './index.js';
 
 class Card {
-    constructor(card, cardsTemplate) {
-        this._card = card;
-        this._cardsTemplate = cardsTemplate;
+    constructor(link, name, template) {
+        this._link = link;
+        this._name = name;
+        this._template = template;
+        this._cardElement = document.querySelector(`#${this._template}`).content.querySelector(`.${this._template}`).cloneNode(true);
+        this._cardElementImage = this._cardElement.querySelector('.elements-grid__image');
+        this._cardElementTitle = this._cardElement.querySelector('.elements-grid__name');
     }
 
-    _generateCardElement = () => {
-        this._cardElement = this._cardsTemplate.querySelector('.elements-grid__item').cloneNode(true);
-        this._cardElement.querySelector('.elements-grid__name').textContent = this._card.name;
-
-        this._cardImage = this._cardElement.querySelector('.elements-grid__image');
-        this._cardImage.src = this._card.link;
-        this._cardImage.alt = this._card.name;
+    _setEventListener(cardElement) {
+        cardElement.querySelector('.elements-grid__icon').addEventListener('click', function (evt) {
+            evt.target.classList.toggle('elements-grid__icon_like');
+        });
+        cardElement.querySelector('.elements-grid__delete').addEventListener('click', function (evt) {
+            cardElement.remove();
+        });
+        this._cardElementImage.addEventListener('click', () => {
+            openPopup(popupPhoto);
+            popupPictureAdd.setAttribute('src', this._link);
+            popupPictureAdd.setAttribute('alt', this._name);
+            popupSubtitleAdd.textContent = this._name;
+        });
     }
 
-    _deleteCard = () => {
-        this._cardElement.remove();
-    }
-
-    _toggleLike = (button) => {
-        button.classList.toggle('elements-grid__icon_like');
-    }
-
-    _setListeners = () => {
-        const cardLike = cardAdd.querySelector('.elements-grid__icon');
-        const cardDelete = cardAdd.querySelector('.elements-grid__delete');
-
-        cardDelete.addEventListener('click', this._deleteCard);
-        cardLike.addEventListener('click', this._toggleLike);
-
-        this._cardImage.addEventListener('click', () => {zoomPhoto(this._card)});
-    }
-
-    createCardElement = () => {
-        this._generateCardElement();
-        this._setListeners();
+    createCardClone() {
+        this._setEventListener(this._cardElement);
+        this._cardElementImage.src = this._link;
+        this._cardElementImage.alt = this._name;
+        this._cardElementTitle.textContent = this._name;
         return this._cardElement;
     }
 }
 
-export default Card;*/
+export {Card};
