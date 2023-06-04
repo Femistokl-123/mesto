@@ -1,11 +1,11 @@
 import {openPopup, popupPhoto, popupPictureAdd, popupSubtitleAdd} from './index.js';
 
 class Card {
-    constructor(link, name, template) {
+    constructor(link, name, cardsTemplate) {
         this._link = link;
         this._name = name;
-        this._template = template;
-        this._cardElement = document.querySelector(`#${this._template}`).content.querySelector(`.${this._template}`).cloneNode(true);
+        this._cardsTemplate = cardsTemplate;
+        this._cardElement = document.querySelector(`#${this._cardsTemplate}`).content.querySelector(`.${this._cardsTemplate}`).cloneNode(true);
         this._cardElementImage = this._cardElement.querySelector('.elements-grid__image');
         this._cardElementTitle = this._cardElement.querySelector('.elements-grid__name');
     }
