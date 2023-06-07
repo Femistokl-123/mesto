@@ -1,4 +1,5 @@
-import { Card } from "./Card.js";
+import {Card} from "./Card.js";
+import {initialCards, configFormSelector} from "./initialCards.js";
 
 /*Редактирование профиля*/
 const popupProfile = document.querySelector('.popup_profile');
