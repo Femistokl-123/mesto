@@ -1,8 +1,3 @@
-class FormValidator {
-  constructor(config, ) {
-
-  }
-}
 enableValidation({
   formSelector: '.popup__form',
   inputSelector: '.popup__input',
