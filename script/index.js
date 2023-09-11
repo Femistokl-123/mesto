@@ -1,3 +1,7 @@
+export {openPopup};
+import {initialCards} from './initialCards.js';
+import Card from './card.js';
+
 const popupProfile = document.querySelector('.popup_profile');
 const popupAddCard = document.querySelector('.popup_add');
 const popupPhoto = document.querySelector('.popup_photo');
