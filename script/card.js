@@ -1,6 +1,6 @@
 import { openPopup } from "./index.js";
 
-class Card {
+export default class Card {
     constructor(data, cardsTemplate) {
         this._name = data.name;
         this._link = data.link;
@@ -12,7 +12,7 @@ class Card {
         return cardAdd;
     }
 
-    generationCard() {
+    createCard() {
         this._card = this._getTemplate;
         this._cardImage = this._card.querySelector('.elements-grid__image');
         this._setEventListeners();
@@ -49,13 +49,11 @@ class Card {
             this._deleteCard();
         });
 
-        this._popupPhoto = document.querySelector('.');
-        this._popupPictureAdd = this._popupPhoto.querySelector('.');
-        this._popupSubtitleAdd = this._popupPhoto.querySelector('.');
+        this._popupPhoto = document.querySelector('.popup_photo');
+        this._popupPictureAdd = this._popupPhoto.querySelector('.popup__picture');
+        this._popupSubtitleAdd = this._popupPhoto.querySelector('.popup__subtitle-photo');
         this._cardImage.addEventListener('click', () => {
             this._zoomPhoto();
         });
     }
 }
-
-export default Card;
