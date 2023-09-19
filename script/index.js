@@ -1,5 +1,4 @@
-export { openPopup };
-import FormValidator, { validationSettings } from "./FormValidator.js";
+import FormValidator from "./FormValidator.js";
 import Card from "./card.js";
 import { initialCards } from "./initialCards.js";
 import { validationSettings } from "./FormValidator.js";
@@ -46,13 +45,13 @@ function closePopup(popup) {
 }
 console.log(closePopup);
 
-function handleEscape(evt) {
+/*function handleEscape(evt) {
     if (evt.key === 'Escape') {
         const openedPopup = document.querySelector('.popup_opened');
         closePopup(openedPopup);
     }
 }
-console.log(handleEscape);
+console.log(handleEscape);*/
 
 function openEditProfileForm() {
     openPopup(popupProfile);
@@ -155,3 +154,5 @@ buttonClosePopupAddCard.addEventListener('click', function () {
 buttonClosePopupPhoto.addEventListener('click', function () {
     closePopup(popupPhoto);
 });
+
+export { openPopup };
