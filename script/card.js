@@ -1,10 +1,9 @@
-import { openPopup } from "./index.js";
-
 export default class Card {
-    constructor(data, cardsTemplate) {
+    constructor(data, cardsTemplate, zoomPhoto) {
         this._name = data.name;
         this._link = data.link;
         this._cardsTemplate = cardsTemplate;
+        this._zoomPhoto = zoomPhoto;
     }
 
     _getTemplate() {
@@ -13,7 +12,7 @@ export default class Card {
     }
 
     createCard() {
-        this._card = this._getTemplate;
+        this._card = this._getTemplate();
         this._cardImage = this._card.querySelector('.elements-grid__image');
         this._setEventListeners();
 
@@ -39,13 +38,13 @@ export default class Card {
     }
 
     _setEventListeners() {
-        this._cardLike = this._card.querySelector('.element-grid_icon');
+        this._cardLike = this._card.querySelector('.elements-grid__icon');
         this._cardLike.addEventListener('click', () => {
             this._toggleLike();
         });
 
-        this._buttonCard = this._card.querySelector('.element-grid_delete');
-        this._buttonCard.addEventListener('click', () => {
+        this._buttonCardDelete = this._card.querySelector('.elements-grid__delete');
+        this._buttonCardDelete.addEventListener('click', () => {
             this._deleteCard();
         });
 

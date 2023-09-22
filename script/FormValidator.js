@@ -2,12 +2,12 @@ class FormValidator {
     constructor(validationSettings, formElement) {
         this._validationSettings = validationSettings;
         this._formElement = formElement;
-        this._formSelector = validationSettings._formSelector;
-        this._inputSelector = validationSettings._inputSelector;
-        this._submitButtonSelector = validationSettings._submitButtonSelector;
-        this._inactiveButtonClass = validationSettings._inactiveButtonClass;
-        this._inputErrorClass = validationSettings._inputErrorClass;
-        this._errorClass = validationSettings._errorClass;
+        /*this._formSelector = validationSettings._formSelector;*/
+        /*this._inputSelector = validationSettings._inputSelector;*/
+        /*this._submitButtonSelector = validationSettings._submitButtonSelector;*/
+        /*this._inactiveButtonClass = validationSettings._inactiveButtonClass;*/
+        /*this._inputErrorClass = validationSettings._inputErrorClass;*/
+        /*this._errorClass = validationSettings._errorClass;*/
         this._inputList = Array.from(this._formElement.querySelectorAll(this._inputSelector));
         this._button = this._formElement.querySelector(this._submitButtonSelector);
     }
@@ -34,7 +34,7 @@ class FormValidator {
         }
     }
 
-    _isInvalid() {
+    _hasInvalidInput() {
         return this._inputList.some((inputElement) => {
             return !inputElement.validity.valid;
         });
@@ -48,7 +48,7 @@ class FormValidator {
     }
 
     toggleButtonState() {
-        if (this._isInvalid(this._inputList)) {
+        if (this._hasInvalidInput(this._inputList)) {
             this._button.classList.add(this.inactiveButtonClass);
             this._button.setAttribute('disabled', true);
         } else {
@@ -73,15 +73,6 @@ class FormValidator {
         });
         this._setEventListeners();
     }
-}
-
-export const validationSettings = {
-    formSelector: '.popup__form',
-    inputSelector: '.popup__input',
-    submitButtonSelector: '.popup__button',
-    inactiveButtonClass: 'popup__button_disabled',
-    inputErrorClass: 'popup__input_type_error',
-    errorClass: 'popup__error_visible'
 }
 
 export default FormValidator;

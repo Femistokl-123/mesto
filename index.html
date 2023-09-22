@@ -21,10 +21,10 @@
                     <img src="./images/image.svg" class="profile-main__avatar-size" alt="аватар">
                     <div class="profile-main__info">
                         <h1 class="profile-main__author">Жак-Ив Кусто</h1>
-                        <button class="profile-main__edit-button" type="button"></button>
+                        <button aria-label="Edit" class="profile-main__edit-button" type="button"></button>
                         <p class="profile-main__job">Исследователь океана</p>
                     </div>
-                    <button class="button profile-main__button" type="button">
+                    <button aria-label="Add" class="button profile-main__button" type="button">
                         <img src="./images/Vector2.svg" class="profile-main__button-plus" alt="плюс">
                     </button>
                 </div>
@@ -33,7 +33,7 @@
             <section class="elements-grid">
                 <template id="cardstemplate">
                     <div class="elements-grid__item">
-                        <button class="elements-grid__delete" type="button"></button>
+                        <button aria-label="Delete" class="elements-grid__delete" type="button"></button>
                         <div class="elements-grid__zoom">
                             <img class="elements-grid__image"
                                 src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg"
@@ -41,7 +41,7 @@
                         </div>
                         <div class="elements-grid__bottom">
                             <h3 class="elements-grid__name">Архыз</h3>
-                            <button class="elements-grid__icon" type="button"></button>
+                            <button aria-label="Like" class="elements-grid__icon" type="button"></button>
                         </div>
                     </div>
                 </template>
@@ -53,7 +53,7 @@
 
         <div class="popup popup_profile">
             <div class="popup__container">
-                <button class="popup__close" type="button"></button>
+                <button aria-label="Close" class="popup__close" type="button"></button>
                 <h3 class="popup__title">Редактировать профиль</h3>
                 <form class="popup__form popup__form-profile" name="form-Element">
                     <label class="popup__field">
@@ -77,7 +77,7 @@
 
         <div class="popup popup_add">
             <div class="popup__container">
-                <button class="popup__close popup__close_add" type="button"></button>
+                <button aria-label="Close" class="popup__close popup__close_add" type="button"></button>
                 <h3 class="popup__title">Новое место</h3>
                 <form class="popup__form popup__form-add" name="form-Element" id="profile-popup">
                     <label class="popup__field">
@@ -103,7 +103,7 @@
 
         <div class="popup popup_photo">
             <div class="popup__container-photo">
-                <button class="popup__close popup__close_photo" type="button"></button>
+                <button aria-label="Close" class="popup__close popup__close_photo" type="button"></button>
                 <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg"
                     class="popup__picture" alt="Архыз">
                 <h2 class="popup__subtitle-photo">Архыз</h2>
