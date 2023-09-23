@@ -119,12 +119,21 @@ function handleOpenPopup(name, link) {
 function createCard(popup) {
     const card = new Card(popup, "#cardstemplate", handleOpenPopup);
     const cardAdd = card.createCard();
+    const cardZoom = cardAdd.querySelector('.elements-grid__zoom');
+    cardZoom.addEventListener('click', () => zoomPhoto(popup));
     return cardAdd;
 }
 
 initialCards.forEach((popup) => {
     elementsGrid.append(createCard(popup));
 });
+
+function zoomPhoto(card) {
+    popupSubtitleAdd.textContent = card.name;
+    popupPictureAdd.setAttribute('src', card.link);
+    popupPictureAdd.setAttribute('alt', card.name);
+    openPopup(popupPhoto);
+}
 
 buttonOpenPopupEditProfile.addEventListener('click', function () {
     openPopup(popupProfile);
@@ -149,7 +158,7 @@ buttonClosePopupPhoto.addEventListener('click', function () {
 /*---*/
 
 
-/*const validateAddForm = new FormValidator(validationSettings, submitElementAddForm);
+const validateAddForm = new FormValidator(validationSettings, submitElementAddForm);
 validateAddForm.enableValidation();
 
 const validateEditForm = new FormValidator(validationSettings, submitElementProfileForm);
@@ -174,4 +183,4 @@ buttonOpenPopupAddCard.addEventListener('click', function () {
     submitElementAddForm.reset();
 });
 
-submitElementAddForm.addEventListener('submit', handleFormSubmitAdd);*/
+submitElementAddForm.addEventListener('submit', handleFormSubmitAdd);

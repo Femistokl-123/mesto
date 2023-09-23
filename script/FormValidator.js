@@ -8,13 +8,13 @@ class FormValidator {
         /*this._inactiveButtonClass = validationSettings._inactiveButtonClass;*/
         /*this._inputErrorClass = validationSettings._inputErrorClass;*/
         /*this._errorClass = validationSettings._errorClass;*/
-        this._inputList = Array.from(this._formElement.querySelectorAll(this._inputSelector));
-        this._button = this._formElement.querySelector(this._submitButtonSelector);
+        this._inputList = Array.from(this._formElement.querySelectorAll(this._validationSettings.inputSelector));
+        this._button = this._formElement.querySelector(this._validationSettings.submitButtonSelector);
     }
 
     _showInputError(inputElement, errorMessage) {
         const formError = this._formElement.querySelector(`.${inputElement.name}-error`);
-        inputElement.classList.remove(this._inputErrorClass);
+        inputElement.classList.add(this._inputErrorClass);
         formError.textContent = errorMessage;
         formError.classList.add(this._errorClass);
     }

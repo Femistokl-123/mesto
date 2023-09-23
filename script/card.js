@@ -1,9 +1,9 @@
 export default class Card {
-    constructor(data, cardsTemplate, zoomPhoto) {
+    constructor(data, cardsTemplate) {
         this._name = data.name;
         this._link = data.link;
         this._cardsTemplate = cardsTemplate;
-        this._zoomPhoto = zoomPhoto;
+        /*this._zoomPhoto = zoomPhoto;*/
     }
 
     _getTemplate() {
@@ -30,12 +30,12 @@ export default class Card {
         this._cardLike.classList.toggle('elements-grid__icon_like');
     }
 
-    _zoomPhoto() {
+    /*_zoomPhoto() {
         openPopup(this._popupPhoto);
         this._popupPictureAdd.src = this._link;
         this._popupPictureAdd.alt = this._name;
         this._popupSubtitleAdd.textContent = this._name;
-    }
+    }*/
 
     _setEventListeners() {
         this._cardLike = this._card.querySelector('.elements-grid__icon');
@@ -48,11 +48,11 @@ export default class Card {
             this._deleteCard();
         });
 
-        this._popupPhoto = document.querySelector('.popup_photo');
+        /*this._popupPhoto = document.querySelector('.popup_photo');
         this._popupPictureAdd = this._popupPhoto.querySelector('.popup__picture');
         this._popupSubtitleAdd = this._popupPhoto.querySelector('.popup__subtitle-photo');
         this._cardImage.addEventListener('click', () => {
             this._zoomPhoto();
-        });
+        });*/
     }
 }
