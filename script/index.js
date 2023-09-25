@@ -54,11 +54,7 @@ function handleEscape(evt) {
 function openCardPopup(popupAddCard) {
     openPopup(popupAddCard);
     submitElementAddForm.reset();
-    /*titleInput.value = '';
-    linkInput.value = '';*/
     validateAddForm.toggleButtonState();
-    /*cardFormSubmitButton.classList.add('popup__button_disabled');
-    cardFormSubmitButton.setAttribute('disabled', true);*/
 }
 
 buttonOpenPopupAddCard.addEventListener('click', () => openCardPopup(popupAddCard));
@@ -104,7 +100,6 @@ function submitAddForm(event) {
     };
     createCard(card);
     closePopup(popupAddCard);
-    /*submitElementAddForm.reset();*/
 }
 
 submitElementProfileForm.addEventListener('submit', submitUserForm);
@@ -121,21 +116,12 @@ function handleOpenPopup(name, link) {
 function createCard(cardData) {
     const card = new Card(cardData, "#cardstemplate", handleOpenPopup);
     const cardAdd = card.createCard();
-    /*const cardZoom = cardAdd.querySelector('.elements-grid__zoom');
-    cardZoom.addEventListener('click', () => zoomPhoto(popup));*/
     return cardAdd;
 }
 
 initialCards.forEach((cardData) => {
     elementsGrid.append(createCard(cardData));
 });
-
-function zoomPhoto(card) {
-    popupSubtitleAdd.textContent = card.name;
-    popupPictureAdd.setAttribute('src', card.link);
-    popupPictureAdd.setAttribute('alt', card.name);
-    openPopup(popupPhoto);
-}
 
 buttonOpenPopupEditProfile.addEventListener('click', function () {
     openPopup(popupProfile);

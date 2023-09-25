@@ -30,13 +30,6 @@ export default class Card {
         this._cardLike.classList.toggle('elements-grid__icon_like');
     }
 
-    /*_zoomPhoto() {
-        openPopup(this._popupPhoto);
-        this._popupPictureAdd.src = this._link;
-        this._popupPictureAdd.alt = this._name;
-        this._popupSubtitleAdd.textContent = this._name;
-    }*/
-
     _setEventListeners() {
         this._cardLike = this._card.querySelector('.elements-grid__icon');
         this._cardLike.addEventListener('click', () => {
@@ -51,11 +44,5 @@ export default class Card {
         this._cardImage.addEventListener('click', () => {
             this._zoomPhoto(this._name, this._link);
         });
-        /*this._popupPhoto = document.querySelector('.popup_photo');
-        this._popupPictureAdd = this._popupPhoto.querySelector('.popup__picture');
-        this._popupSubtitleAdd = this._popupPhoto.querySelector('.popup__subtitle-photo');
-        this._cardImage.addEventListener('click', () => {
-            this._zoomPhoto();
-        });*/
     }
 }
