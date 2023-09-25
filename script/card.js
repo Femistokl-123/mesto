@@ -1,9 +1,9 @@
 export default class Card {
-    constructor(data, cardsTemplate) {
+    constructor(data, cardsTemplate, zoomPhoto) {
         this._name = data.name;
         this._link = data.link;
         this._cardsTemplate = cardsTemplate;
-        /*this._zoomPhoto = zoomPhoto;*/
+        this._zoomPhoto = zoomPhoto;
     }
 
     _getTemplate() {
@@ -48,6 +48,9 @@ export default class Card {
             this._deleteCard();
         });
 
+        this._cardImage.addEventListener('click', () => {
+            this._zoomPhoto(this._name, this._link);
+        });
         /*this._popupPhoto = document.querySelector('.popup_photo');
         this._popupPictureAdd = this._popupPhoto.querySelector('.popup__picture');
         this._popupSubtitleAdd = this._popupPhoto.querySelector('.popup__subtitle-photo');

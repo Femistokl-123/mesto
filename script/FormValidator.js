@@ -14,16 +14,16 @@ class FormValidator {
 
     _showInputError(inputElement, errorMessage) {
         const formError = this._formElement.querySelector(`.${inputElement.name}-error`);
-        inputElement.classList.add(this._inputErrorClass);
+        inputElement.classList.add(this._validationSettings.inputErrorClass);
         formError.textContent = errorMessage;
-        formError.classList.add(this._errorClass);
+        formError.classList.add(this._validationSettings.errorClass);
     }
 
     _hideInputError(inputElement) {
         const formError = this._formElement.querySelector(`.${inputElement.name}-error`);
-        inputElement.classList.remove(this._inputErrorClass);
+        inputElement.classList.remove(this._validationSettings.inputErrorClass);
         formError.textContent = '';
-        formError.classList.remove(this._errorClass);
+        formError.classList.remove(this._validationSettings.errorClass);
     }
 
     _isValid(inputElement) {
@@ -49,10 +49,10 @@ class FormValidator {
 
     toggleButtonState() {
         if (this._hasInvalidInput(this._inputList)) {
-            this._button.classList.add(this.inactiveButtonClass);
+            this._button.classList.add(this._validationSettings.inactiveButtonClass);
             this._button.setAttribute('disabled', true);
         } else {
-            this._button.classList.remove(this._inactiveButtonClass);
+            this._button.classList.remove(this._validationSettings.inactiveButtonClass);
             this._button.removeAttribute('disabled', false);
         }
     }

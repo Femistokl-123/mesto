@@ -53,10 +53,12 @@ function handleEscape(evt) {
 
 function openCardPopup(popupAddCard) {
     openPopup(popupAddCard);
-    titleInput.value = '';
-    linkInput.value = '';
-    cardFormSubmitButton.classList.add('popup__button_disabled');
-    cardFormSubmitButton.setAttribute('disabled', true);
+    submitElementAddForm.reset();
+    /*titleInput.value = '';
+    linkInput.value = '';*/
+    validateAddForm.toggleButtonState();
+    /*cardFormSubmitButton.classList.add('popup__button_disabled');
+    cardFormSubmitButton.setAttribute('disabled', true);*/
 }
 
 buttonOpenPopupAddCard.addEventListener('click', () => openCardPopup(popupAddCard));
@@ -100,9 +102,9 @@ function submitAddForm(event) {
         name: nameAdd,
         link: linkAdd
     };
-    addCard(card);
+    createCard(card);
     closePopup(popupAddCard);
-    submitElementAddForm.reset();
+    /*submitElementAddForm.reset();*/
 }
 
 submitElementProfileForm.addEventListener('submit', submitUserForm);
@@ -116,16 +118,16 @@ function handleOpenPopup(name, link) {
     openPopup(popupPhoto);
 }
 
-function createCard(popup) {
-    const card = new Card(popup, "#cardstemplate", handleOpenPopup);
+function createCard(cardData) {
+    const card = new Card(cardData, "#cardstemplate", handleOpenPopup);
     const cardAdd = card.createCard();
-    const cardZoom = cardAdd.querySelector('.elements-grid__zoom');
-    cardZoom.addEventListener('click', () => zoomPhoto(popup));
+    /*const cardZoom = cardAdd.querySelector('.elements-grid__zoom');
+    cardZoom.addEventListener('click', () => zoomPhoto(popup));*/
     return cardAdd;
 }
 
-initialCards.forEach((popup) => {
-    elementsGrid.append(createCard(popup));
+initialCards.forEach((cardData) => {
+    elementsGrid.append(createCard(cardData));
 });
 
 function zoomPhoto(card) {
