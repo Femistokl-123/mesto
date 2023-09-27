@@ -90,22 +90,6 @@ function submitUserForm(event) {
     closePopup(popupProfile);
 }
 
-function submitAddForm(event) {
-    event.preventDefault();
-    const nameAdd = titleInput.value;
-    const linkAdd = linkInput.value;
-    const card = {
-        name: nameAdd,
-        link: linkAdd
-    };
-    createCard(card);
-    closePopup(popupAddCard);
-}
-
-submitElementProfileForm.addEventListener('submit', submitUserForm);
-
-submitElementAddForm.addEventListener('submit', submitAddForm);
-
 function handleOpenPopup(name, link) {
     popupPictureAdd.src = link;
     popupPictureAdd.alt = name;
@@ -154,11 +138,9 @@ validateEditForm.enableValidation();
 
 function handleFormSubmitAdd(evt) {
     evt.preventDefault();
-    const newCardData = ({ name: titleInput, link: linkInput });
+    const newCardData = ({ name: titleInput.value, link: linkInput.value });
     closePopup(popupAddCard);
     elementsGrid.prepend(createCard(newCardData));
-    submitElementAddForm.reset();
-    validateAddForm.toggleButtonState();
 }
 
 submitElementProfileForm.addEventListener('submit', submitUserForm);
