@@ -2,6 +2,7 @@ import FormValidator from "./FormValidator.js";
 import Card from "./card.js";
 import { initialCards } from "./constant.js";
 import { validationSettings } from "./constant.js";
+import "./pages/index.css";
 
 import Section from "./Section.js";
 import PopupWithImage from "./PopupWithImage.js";
