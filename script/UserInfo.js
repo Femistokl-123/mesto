@@ -1,5 +1,5 @@
 export default class UserInfo {
-    constructor({authorElement, jobElement}) {
+    constructor(authorElement, jobElement) {
         this._authorElement = authorElement;
         this._jobElement = jobElement;
     }
