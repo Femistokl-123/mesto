@@ -3,6 +3,11 @@ import Card from "./card.js";
 import { initialCards } from "./constant.js";
 import { validationSettings } from "./constant.js";
 
+import UserInfo from "./components/UserInfo.js";
+import Section from "./components/Section.js";
+import PopupWithImage from "./components/PopupWithImage.js";
+import PopupWithform from "./components/PopupWithForm.js";
+
 const popupProfile = document.querySelector('.popup_profile');
 const popupAddCard = document.querySelector('.popup_add');
 const popupPhoto = document.querySelector('.popup_photo');
@@ -129,7 +134,28 @@ buttonClosePopupPhoto.addEventListener('click', function () {
 });
 /*---*/
 
+const imagePopup = new PopupWithImage(popupPhoto);
+imagePopup.setEventListeners();
 
+const formPopup = new PopupWithform(popupProfile, {
+    submitUserForm: ({ name, inf }) => {
+        userInfo.setUserInfo({ name, inf });
+    },
+});
+formPopup.setEventListeners();
+
+const userInfo = new UserInfo(authorElement, jobElement);
+
+const defaultCards = new Section({
+    items: initialCards,
+    renderer: (item) => {
+        defaultCards.addItem(createCard(item));
+    },
+},
+    elementsGrid
+);
+
+/*---*/
 const validateAddForm = new FormValidator(validationSettings, submitElementAddForm);
 validateAddForm.enableValidation();
 

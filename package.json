@@ -1,0 +1,14 @@
+{
+  "name": "mesto",
+  "version": "1.0.0",
+  "description": "Ссылка на Github Pages: https://femistokl-123.github.io/mesto/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.7.1"
+  }
+}

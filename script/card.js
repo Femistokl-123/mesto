@@ -1,9 +1,10 @@
+
 export default class Card {
-    constructor(data, cardsTemplate, zoomPhoto) {
+    constructor({ data, handleCardClick }, cardsTemplate) {
         this._name = data.name;
         this._link = data.link;
         this._cardsTemplate = cardsTemplate;
-        this._zoomPhoto = zoomPhoto;
+        this._handleCardClick = handleCardClick;
     }
 
     _getTemplate() {
@@ -42,7 +43,7 @@ export default class Card {
         });
 
         this._cardImage.addEventListener('click', () => {
-            this._zoomPhoto(this._name, this._link);
+            this._handleCardClick(this._name, this._link);
         });
     }
 }
