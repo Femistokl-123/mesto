@@ -88,13 +88,13 @@ defaultCards.rendererItems(initialCards);
 const validateAddForm = new FormValidator(validationSettings, submitElementAddForm);
 validateAddForm.enableValidation();
 
-const validateEditForm = new FormValidator(validationSettings, submitElementProfileForm);
-validateEditForm.enableValidation();
-
 buttonOpenPopupAddCard.addEventListener("click", () => {
     popupAdd.open();
     validateAddForm.resetValidation();
 });
+
+const validateEditForm = new FormValidator(validationSettings, submitElementProfileForm);
+validateEditForm.enableValidation();
 
 buttonOpenPopupEditProfile.addEventListener("click", () => {
     infoPopupForm.setInputValues(userInfo.getUserInfo());
