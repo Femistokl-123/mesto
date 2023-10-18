@@ -1,7 +1,7 @@
 import FormValidator from "./FormValidator.js";
 import Card from "./card.js";
-import { initialCards } from "./constant.js";
-import { validationSettings } from "./constant.js";
+import { initialCards } from "../utils/constant.js";
+import { validationSettings } from "../utils/constant.js";
 import "./pages/index.css";
 
 import Section from "./Section.js";
@@ -46,6 +46,7 @@ const userInfo = new UserInfo(authorElement, jobElement);
 const infoPopupForm = new PopupWithForm(popupProfile, {
     handleFormSubmitAdd: ({ name, inf }) => {
         userInfo.setUserInfo({ name, inf });
+        this.close();
     },
 });
 infoPopupForm.setEventListeners();
@@ -53,6 +54,7 @@ infoPopupForm.setEventListeners();
 const popupAdd = new PopupWithForm(popupAddCard, {
     handleFormSubmitAdd: (data) => {
         defaultCards.addItem(createCard(data));
+        this.close();
     },
 });
 popupAdd.setEventListeners();

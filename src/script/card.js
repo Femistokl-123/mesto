@@ -24,6 +24,7 @@ export default class Card {
 
     _deleteCard() {
         this._card.remove();
+        this._element = null;
     }
 
     _toggleLike() {
