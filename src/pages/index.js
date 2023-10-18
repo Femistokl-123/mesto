@@ -47,7 +47,7 @@ const userInfo = new UserInfo(authorElement, jobElement);
 const infoPopupForm = new PopupWithForm(popupProfile, {
     handleFormSubmitAdd: ({ name, inf }) => {
         userInfo.setUserInfo({ name, inf });
-        /*popupAdd.close();*/
+        infoPopupForm.close();
     },
 });
 infoPopupForm.setEventListeners();
@@ -55,7 +55,7 @@ infoPopupForm.setEventListeners();
 const popupAdd = new PopupWithForm(popupAddCard, {
     handleFormSubmitAdd: (data) => {
         defaultCards.addItem(createCard(data));
-        /*popupAdd.close();*/
+        popupAdd.close();
     },
 });
 popupAdd.setEventListeners();
