@@ -45,8 +45,8 @@ const imagePopup = new PopupWithImage(popupPhoto);
 const userInfo = new UserInfo(authorElement, jobElement);
 
 const infoPopupForm = new PopupWithForm(popupProfile, {
-    handleFormSubmitAdd: ({ name, inf }) => {
-        userInfo.setUserInfo({ name, inf });
+    handleFormSubmitAdd: (data) => {
+        userInfo.setUserInfo({ name: data['name-Input'],inf: data['inf-Input']});
         infoPopupForm.close();
     },
 });
