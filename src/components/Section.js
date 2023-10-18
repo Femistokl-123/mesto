@@ -9,8 +9,8 @@ export default class Section {
     }
 
     /* Перебор массива */
-    rendererItems() {
-        this._items.forEach((item) => {
+    rendererItems(data) {
+        data.forEach((item) => {
             this._renderer(item);
         });
     }
