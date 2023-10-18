@@ -61,15 +61,15 @@ const popupAdd = new PopupWithForm(popupAddCard, {
 popupAdd.setEventListeners();
 
 buttonOpenPopupAddCard.addEventListener("click", () => {
-    validateAddForm.resetValidation();
     popupAdd.open();
 });
+validateAddForm.resetValidation();
 
 buttonOpenPopupEditProfile.addEventListener("click", () => {
     infoPopupForm.setInputValues(userInfo.getUserInfo());
-    validateEditForm.resetValidation();
     infoPopupForm.open();
 });
+validateEditForm.resetValidation();
 
 const createCard = (item) => {
     const card = new Card ({
