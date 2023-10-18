@@ -60,17 +60,6 @@ const popupAdd = new PopupWithForm(popupAddCard, {
 });
 popupAdd.setEventListeners();
 
-buttonOpenPopupAddCard.addEventListener("click", () => {
-    popupAdd.open();
-});
-validateAddForm.resetValidation();
-
-buttonOpenPopupEditProfile.addEventListener("click", () => {
-    infoPopupForm.setInputValues(userInfo.getUserInfo());
-    infoPopupForm.open();
-});
-validateEditForm.resetValidation();
-
 const createCard = (item) => {
     const card = new Card ({
         data: item,
@@ -101,6 +90,17 @@ validateAddForm.enableValidation();
 
 const validateEditForm = new FormValidator(validationSettings, submitElementProfileForm);
 validateEditForm.enableValidation();
+
+buttonOpenPopupAddCard.addEventListener("click", () => {
+    popupAdd.open();
+    validateAddForm.resetValidation();
+});
+
+buttonOpenPopupEditProfile.addEventListener("click", () => {
+    infoPopupForm.setInputValues(userInfo.getUserInfo());
+    infoPopupForm.open();
+    validateEditForm.resetValidation();
+});
 /* --- */
 
 /*Открытие и закрытие*/
