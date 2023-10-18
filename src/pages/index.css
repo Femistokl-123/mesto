@@ -1,16 +1,10 @@
 @import url(../vendor/normalize.css);
-
 @import url(../fonts/fonts.css);
-
 @import url(../blocks/page/page.css);
-
 @import url(../blocks/content/content.css);
-
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__logo/header__logo.css);
-
 @import url(../blocks/profile/profile.css);
-
 @import url(../blocks/profile-main/profile-main.css);
 @import url(../blocks/profile-main/__info/profile-main__info.css);
 @import url(../blocks/profile-main/__author/profile-main__author.css);
@@ -19,7 +13,6 @@
 @import url(../blocks/profile-main/__button/profile-main__button.css);
 @import url(../blocks/profile-main/__button-plus/profile-main__button-plus.css);
 @import url(../blocks/profile-main/__avatar-size/profile-main__avatar-size.css);
-
 @import url(../blocks/elements-grid/elements-grid.css);
 @import url(../blocks/elements-grid/__image/elements-grid__image.css);
 @import url(../blocks/elements-grid/__item/elements-grid__item.css);
@@ -29,12 +22,9 @@
 @import url(../blocks/elements-grid/__bottom/elements-grid__bottom.css);
 @import url(../blocks/elements-grid/__delete/elements-grid__delete.css);
 @import url(../blocks/elements-grid/__zoom/elements-grid__zoom.css);
-
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
-
 @import url(../blocks/button/button.css);
-
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/popup/__container/popup__container.css);
@@ -47,9 +37,7 @@
 @import url(../blocks/popup/__picture/popup__picture.css);
 @import url(../blocks/popup/__image/popup__image.css);
 @import url(../blocks/popup/__container/__container-photo/popup__container-photo.css);
-
 @import url(../blocks/popup/__field/popup__field.css);
-
 @import url(../blocks/popup/__button/_disabled/popup__button_disabled.css);
 @import url(../blocks/popup/__input/_type/_error/popup__input_type_error.css);
 @import url(../blocks/popup/__input-error/popup__input-error.css);
