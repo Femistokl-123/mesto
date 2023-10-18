@@ -52,14 +52,6 @@ const infoPopupForm = new PopupWithForm(popupProfile, {
 });
 infoPopupForm.setEventListeners();
 
-const popupAdd = new PopupWithForm(popupAddCard, {
-    handleFormSubmitAdd: (data) => {
-        defaultCards.addItem(createCard(data));
-        popupAdd.close();
-    },
-});
-popupAdd.setEventListeners();
-
 const createCard = (item) => {
     const card = new Card ({
         data: item,
@@ -84,6 +76,14 @@ const defaultCards = new Section({
 );
 
 defaultCards.rendererItems(initialCards);
+
+const popupAdd = new PopupWithForm(popupAddCard, {
+    handleFormSubmitAdd: (data) => {
+        defaultCards.addItem(createCard(data));
+        popupAdd.close();
+    },
+});
+popupAdd.setEventListeners();
 
 const validateAddForm = new FormValidator(validationSettings, submitElementAddForm);
 validateAddForm.enableValidation();
