@@ -65,6 +65,7 @@ const createCard = (item) => {
     return cardAdd;
 }
 imagePopup.setEventListeners();
+console.log(createCard);
 
 const defaultCards = new Section({
     items: initialCards,
@@ -72,10 +73,10 @@ const defaultCards = new Section({
         defaultCards.addItem(createCard(item));
     },
 },
-    '.elements-grid__item'
+    elementsGrid
 );
-
 defaultCards.rendererItems(initialCards);
+console.log(defaultCards);
 
 const popupAdd = new PopupWithForm(popupAddCard, {
     handleFormSubmitAdd: (data) => {
