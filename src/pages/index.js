@@ -80,7 +80,7 @@ console.log(defaultCards);
 
 const popupAdd = new PopupWithForm(popupAddCard, {
     handleFormSubmitAdd: (data) => {
-        defaultCards.addItem(createCard(data));
+        defaultCards.addItem(createCard({ name: data["title-Input"], link: data["link-input"]}));
         popupAdd.close();
     },
 });
