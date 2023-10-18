@@ -61,8 +61,7 @@ const createCard = (item) => {
     },
         "#cardstemplate"
     );
-    const cardAdd = card.createCard();
-    return cardAdd;
+    return card.createCard();
 }
 imagePopup.setEventListeners();
 console.log(createCard);
