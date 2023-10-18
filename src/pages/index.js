@@ -53,13 +53,13 @@ const infoPopupForm = new PopupWithForm(popupProfile, {
 infoPopupForm.setEventListeners();
 
 const createCard = (item) => {
-    const card = new Card ({
+    const card = new Card({
         data: item,
         handleCardClick: (link, name) => {
             imagePopup.open(link, name);
         },
     },
-    "#cardstemplate"
+        "#cardstemplate"
     );
     const cardAdd = card.createCard();
     return cardAdd;
@@ -72,7 +72,7 @@ const defaultCards = new Section({
         defaultCards.addItem(createCard(item));
     },
 },
-    elementsGrid
+    '.elements-grid__item'
 );
 
 defaultCards.rendererItems(initialCards);
