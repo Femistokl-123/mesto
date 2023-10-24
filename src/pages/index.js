@@ -215,13 +215,13 @@ buttonOpenPopupEditProfile.addEventListener("click", () => {
     validateEditForm.resetValidation();
 });
 
+const validateEditForm = new FormValidator(validationSettings, submitElementProfileForm);
+validateEditForm.enableValidation();
+
 buttonOpenPopupAddCard.addEventListener("click", () => {
     popupAdd.open();
     validateAddForm.resetValidation();
 });
-
-const validateEditForm = new FormValidator(validationSettings, submitElementProfileForm);
-validateEditForm.enableValidation();
 
 const validateAddForm = new FormValidator(validationSettings, submitElementAddForm);
 validateAddForm.enableValidation();
