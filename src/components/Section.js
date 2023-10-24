@@ -4,18 +4,18 @@ export default class Section {
         this._renderer = renderer;
     }
 
+    /* Перебор массива */
+    rendererItems(data) {
+        data.forEach((item) => {
+            this._renderer(item);
+        });
+    }
+
     addItem(element) {
         this._container.append(element);
     }
 
     addNewItem(element) {
         this._container.prepend(element);
-    }
-
-    /* Перебор массива */
-    rendererItems(data) {
-        data.forEach((item) => {
-            this._renderer(item);
-        });
     }
 }

@@ -77,6 +77,12 @@ Promise.all([api.getUserInfo(), api.getInitialCards()])
 const popupConfirmDelete = new PopupConfirmDelete(popupAsk);
 popupConfirmDelete.setEventListeners();
 
+buttonOpenPopupEditProfile.addEventListener("click", () => {
+    infoPopupForm.setInputValues(userInfo.getUserInfo());
+    infoPopupForm.open();
+    validateEditForm.resetValidation();
+});
+
 const createCard = (item) => {
     const card = new Card(
         {

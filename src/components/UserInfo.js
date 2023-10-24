@@ -12,7 +12,7 @@ export default class UserInfo {
         return this._userValues;
     }
 
-    setUserInfo({ name, inf, avatar, _id}) {
+    setUserInfo({ name, inf, avatar, _id }) {
         this._authorElement.textContent = name;
         this._jobElement.textContent = inf;
         this.changeProfileAvatar(avatar);
