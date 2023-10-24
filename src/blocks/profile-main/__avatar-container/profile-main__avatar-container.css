@@ -15,7 +15,7 @@
     height: 120px;
     opacity: 0;
     border-radius: 50%;
-    background: url(../../../images/image.svg) center no-repeat
+    background: url(../../../images/Vector1.svg) center no-repeat
       rgba(0, 0, 0, 0.8);
     transition: opacity 0.35s linear;
 }
