@@ -1,18 +1,17 @@
+/* Импорты */
 import './index.css';
-
-import Api from '../components/Api.js';
-import PopupConfirmDelete from '../components/PopupConfirmDelete.js';
-
-import FormValidator from "../components/FormValidator.js";
 import Card from "../components/Card.js";
-import { initialCards } from "../utils/constant.js";
+import FormValidator from "../components/FormValidator.js";
 import { validationSettings } from "../utils/constant.js";
-
-import Section from "../components/Section.js";
 import PopupWithImage from "../components/PopupWithImage.js";
-import PopupWithForm from "../components/PopupWithForm.js";
+import Section from "../components/Section.js";
 import UserInfo from "../components/UserInfo.js";
+import PopupWithForm from "../components/PopupWithForm.js";
+import PopupConfirmDelete from '../components/PopupConfirmDelete.js';
+import Api from '../components/Api.js';
+import { initialCards } from "../utils/constant.js";
 
+/* Переменные */
 const popupProfile = document.querySelector('.popup_profile');
 const popupAddCard = document.querySelector('.popup_add');
 const popupPhoto = document.querySelector('.popup_photo');
@@ -78,12 +77,6 @@ Promise.all([api.getUserInfo(), api.getInitialCards()])
 const popupConfirmDelete = new PopupConfirmDelete(popupAsk);
 popupConfirmDelete.setEventListeners();
 
-buttonOpenPopupEditProfile.addEventListener("click", () => {
-    infoPopupForm.setInputValues(userInfo.getUserInfo());
-    infoPopupForm.open();
-    validateEditForm.resetValidation();
-});
-
 const createCard = (item) => {
     const card = new Card(
         {
@@ -136,14 +129,14 @@ const createCard = (item) => {
 imagePopup.setEventListeners();
 
 const defaultCards = new Section({
-    items: initialCards,
+    /*items: initialCards,*/
     renderer: (item) => {
         defaultCards.addItem(createCard(item));
     },
 },
     elementsGrid
 );
-defaultCards.rendererItems(initialCards);
+/*defaultCards.rendererItems(initialCards);*/
 
 const avatarChangeForm = new PopupWithForm(popupAvatar, {
     handleFormSubmitAdd: (data) => {
@@ -175,7 +168,7 @@ const popupAdd = new PopupWithForm(popupAddCard, {
         api
         .addNewCard(data)
         .then((res) => {
-            defaultCards.addItem(createCard({ name: data["title-Input"], link: data["link-Input"] }));
+            defaultCards.addItem(createCard(res/*{ name: data["title-Input"], link: data["link-Input"] }*/));
             popupAdd.close();
         })
         .catch((err) => {
@@ -194,7 +187,7 @@ const infoPopupForm = new PopupWithForm(popupProfile, {
         api
         .changeUserInfo(data)
         .then((data) => {
-            userInfo.setUserInfo({ name: data['name-Input'], inf: data['inf-Input'] });
+            userInfo.setUserInfo(data/*{ name: data['name-Input'], inf: data['inf-Input'] }*/);
             infoPopupForm.close();
         })
         .catch((err) => {
