@@ -163,6 +163,7 @@ const avatarChangeForm = new PopupWithForm(popupAvatar, {
 });
 avatarChangeForm.setEventListeners();
 
+
 profileAvatarContainer.addEventListener("click", () => {
     avatarChangeForm.open();
     avatarChangeValidation.resetValidation();
