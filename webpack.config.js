@@ -36,12 +36,12 @@ module.exports = {
             loader: 'css-loader',
             options: {
               importLoaders: 1
-            }
+            },
           },
           'postcss-loader'
-        ]
+        ],
       },
-    ]
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -49,5 +49,5 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
-  ]
-}
+  ],
+};

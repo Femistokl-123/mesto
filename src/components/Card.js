@@ -87,24 +87,4 @@ export default class Card {
             this._handleCardClick(this._link, this._name);
         });
     }
-
-    /*_toggleLike() {
-        this._cardLike.classList.toggle('elements-grid__icon_like');
-    }
-
-    _setEventListeners() {
-        this._cardLike = this._card.querySelector('.elements-grid__icon');
-        this._cardLike.addEventListener('click', () => {
-            this._toggleLike();
-        });
-
-        this._buttonCardDelete = this._card.querySelector('.elements-grid__delete');
-        this._buttonCardDelete.addEventListener('click', () => {
-            this._deleteCard();
-        });
-
-        this._cardImage.addEventListener('click', () => {
-            this._handleCardClick(this._name, this._link);
-        });
-    }*/
 }
