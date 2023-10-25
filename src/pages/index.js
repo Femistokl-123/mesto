@@ -51,21 +51,24 @@ const likeButton = document.querySelector('.elements-grid__icon');
 const imagePopup = new PopupWithImage(popupPhoto);
 const userInfo = new UserInfo(authorElement, jobElement, avatarElement);
 
-let userId;
-
-const avatarChangeValidation = new FormValidator(validationSettings, popupAvatar);
-avatarChangeValidation.enableValidation();
-
 const api = new Api({
-    baseUrl: "https://mesto.nomoreparties.co/v1/cohort-77",
+    baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-77',
     headers: {
         authorization: "e692960a-3684-42ea-980c-b7801846f4c5",
         "Content-Type": "application/json",
     },
 });
 
+
+let userId;
+
+const avatarChangeValidation = new FormValidator(validationSettings, popupAvatar);
+avatarChangeValidation.enableValidation();
+
+
 Promise.all([api.getUserInfo(), api.getInitialCards()])
     .then(([userData, cards]) => {
+        console.log(userData)
         userInfo.setUserInfo(userData);
         userId = userData._id;
         defaultCards.rendererItems(cards);
@@ -78,8 +81,8 @@ const popupConfirmDelete = new PopupConfirmDelete(popupAsk);
 popupConfirmDelete.setEventListeners();
 
 buttonOpenPopupEditProfile.addEventListener("click", () => {
-    infoPopupForm.open();
     infoPopupForm.setInputValues(userInfo.getUserInfo());
+    infoPopupForm.open();
     validateEditForm.resetValidation();
 });
 
@@ -95,8 +98,7 @@ const createCard = (item) => {
         handleDeleteIconclick: () => {
             popupConfirmDelete.open();
             popupConfirmDelete.setSubmitAction(() => {
-                api
-                    .deleteCard(card.getCardId())
+                api.deleteCard(card.getCardId())
                     .then(() => {
                         card.deleteCard();
                         popupConfirmDelete.close();
@@ -108,8 +110,7 @@ const createCard = (item) => {
         },
         handleLikeIconClick: () => {
             if (card.cardIsLiked()) {
-                api
-                    .removeLike(card.getCardId())
+                api.removeLike(card.getCardId())
                     .then((data) => {
                         card.updateLikeNumbers(data.likes);
                     })
@@ -117,8 +118,7 @@ const createCard = (item) => {
                         console.log(`Ошибка: ${err}`);
                     });
             } else {
-                api
-                    .putLike(card.getCardId())
+                api.putLike(card.getCardId())
                     .then((data) => {
                         card.updateLikeNumbers(data.likes);
                     })
@@ -147,10 +147,9 @@ const defaultCards = new Section({
 const avatarChangeForm = new PopupWithForm(popupAvatar, {
     handleFormSubmitAdd: (data) => {
         avatarChangeForm.renderLoading(true);
-        api
-        .changeUserAvatar(data)
+        api.changeUserAvatar(data)    
         .then((data) => {
-            userInfo.changeProfileAvatar(data.avatar);
+            userInfo.setUserInfo(data);
             avatarChangeForm.close();
         })
         .catch((err) => {
@@ -172,10 +171,10 @@ profileAvatarContainer.addEventListener("click", () => {
 const popupAdd = new PopupWithForm(popupAddCard, {
     handleFormSubmitAdd: (data) => {
         popupAdd.renderLoading(true);
-        api
-        .addNewCard(data)
+        api.addNewCard(data)
         .then((res) => {
-            defaultCards.addItem(createCard(res/*{ name: data["title-Input"], link: data["link-Input"] }*/));
+            defaultCards.addItem(createCard(res));
+            defaultCards.addNewItem(createCard(res));
             popupAdd.close();
         })
         .catch((err) => {
@@ -208,10 +207,13 @@ const infoPopupForm = new PopupWithForm(popupProfile, {
 infoPopupForm.setEventListeners();
 
 buttonOpenPopupEditProfile.addEventListener("click", () => {
-    infoPopupForm.open();
     infoPopupForm.setInputValues(userInfo.getUserInfo());
+    infoPopupForm.open();
     validateEditForm.resetValidation();
 });
+
+const validateEditForm = new FormValidator(validationSettings, submitElementProfileForm);
+validateEditForm.enableValidation();
 
 buttonOpenPopupAddCard.addEventListener("click", () => {
     popupAdd.open();
@@ -220,6 +222,3 @@ buttonOpenPopupAddCard.addEventListener("click", () => {
 
 const validateAddForm = new FormValidator(validationSettings, submitElementAddForm);
 validateAddForm.enableValidation();
-
-const validateEditForm = new FormValidator(validationSettings, submitElementProfileForm);
-validateEditForm.enableValidation();

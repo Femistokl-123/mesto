@@ -1,5 +1,5 @@
 export default class Card {
-    constructor({ data, ownerId, userId, handleCardClick, handleDeleteIconclick, handleLikeIconClick }, cardsTemplate) {
+    constructor({data, ownerId, userId, handleCardClick, handleDeleteIconclick, handleLikeIconClick}, cardsTemplate) {
         this._name = data.name;
         this._link = data.link;
         this._cardId = data._id;
@@ -28,9 +28,8 @@ export default class Card {
         this._cardImage.src = this._link;
         this._cardImage.alt = this._name;
         this._cardName.textContent = this._name;
-
-        this._setEventListeners();
         this.updateLikeNumbers(this._cardLikes);
+        this._setEventListeners();
         return this._card;
     }
 

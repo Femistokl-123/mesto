@@ -1,7 +1,7 @@
 export default class Section {
     constructor({ renderer }, cardSelector) {
-        this._renderer = renderer;
         this._container = cardSelector;
+        this._renderer = renderer;
     }
 
     /* Перебор массива */
