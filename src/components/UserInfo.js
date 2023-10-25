@@ -7,8 +7,8 @@ export default class UserInfo {
 
     getUserInfo() {
         this._userValues = {};
-        this._userValues["name-Input"] = this._authorElement.textContent;
-        this._userValues["inf-Input"] = this._jobElement.textContent;
+        this._userValues["nameInput"] = this._authorElement.textContent;
+        this._userValues["infInput"] = this._jobElement.textContent;
         return this._userValues;
     }
 

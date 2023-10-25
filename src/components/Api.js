@@ -24,14 +24,15 @@ export default class Api {
   // Добавление новой карточки
   addNewCard(data) {
     return fetch(`${this.baseUrl}/cards`, {
-      method: "POST",
+      method: 'POST',
       headers: this.headers,
       body: JSON.stringify({
-        link: data.linkInput,
-        name: data.titleInput,
-      }),
-    }).then(this._checkResponse);
-  }
+          name: data.titleInput,
+          link: data.linkInput
+      })
+    })
+      .then(this._checkResponse)
+    }
 
   // Получение информации о пользователе
   getUserInfo() {
