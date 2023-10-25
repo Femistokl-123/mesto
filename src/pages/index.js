@@ -78,8 +78,8 @@ const popupConfirmDelete = new PopupConfirmDelete(popupAsk);
 popupConfirmDelete.setEventListeners();
 
 buttonOpenPopupEditProfile.addEventListener("click", () => {
-    infoPopupForm.setInputValues(userInfo.getUserInfo());
     infoPopupForm.open();
+    infoPopupForm.setInputValues(userInfo.getUserInfo());
     validateEditForm.resetValidation();
 });
 
@@ -208,13 +208,10 @@ const infoPopupForm = new PopupWithForm(popupProfile, {
 infoPopupForm.setEventListeners();
 
 buttonOpenPopupEditProfile.addEventListener("click", () => {
-    infoPopupForm.setInputValues(userInfo.getUserInfo());
     infoPopupForm.open();
+    infoPopupForm.setInputValues(userInfo.getUserInfo());
     validateEditForm.resetValidation();
 });
-
-const validateEditForm = new FormValidator(validationSettings, submitElementProfileForm);
-validateEditForm.enableValidation();
 
 buttonOpenPopupAddCard.addEventListener("click", () => {
     popupAdd.open();
@@ -223,3 +220,6 @@ buttonOpenPopupAddCard.addEventListener("click", () => {
 
 const validateAddForm = new FormValidator(validationSettings, submitElementAddForm);
 validateAddForm.enableValidation();
+
+const validateEditForm = new FormValidator(validationSettings, submitElementProfileForm);
+validateEditForm.enableValidation();

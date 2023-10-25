@@ -27,8 +27,8 @@ export default class Api {
       method: "POST",
       headers: this.headers,
       body: JSON.stringify({
-        link: data.link,
-        name: data.name,
+        link: data.linkInput,
+        name: data.titleInput,
       }),
     }).then(this._checkResponse);
   }
@@ -47,8 +47,8 @@ export default class Api {
       method: "PATCH",
       headers: this.headers,
       body: JSON.stringify({
-        name: data.title,
-        about: data.job,
+        name: data.nameInput,
+        about: data.infInput,
       }),
     }).then(this._checkResponse);
   }
