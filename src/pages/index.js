@@ -173,7 +173,6 @@ const popupAdd = new PopupWithForm(popupAddCard, {
         popupAdd.renderLoading(true);
         api.addNewCard(data)
         .then((res) => {
-            defaultCards.addItem(createCard(res));
             defaultCards.addNewItem(createCard(res));
             popupAdd.close();
         })
